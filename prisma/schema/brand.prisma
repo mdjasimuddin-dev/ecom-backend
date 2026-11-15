@@ -1,0 +1,8 @@
+// model Brand {
+//   id       String    @id @default(cuid())
+//   name     String
+//   slug     String    @unique
+//   logo     String?
+//   isActive Boolean   @default(true)
+//   products Product[]
+// }

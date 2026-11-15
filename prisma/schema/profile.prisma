@@ -1,10 +1,11 @@
-
 model Profile {
-  id          String    @id @default(uuid())
+  id           String    @id @default(uuid())
   profilePhoto String?
-  dateOfBirth DateTime?
-  gender      String?
-  bio         String?
+  dateOfBirth  DateTime?
+  gender       String?
+  bio          String?
+
+  addresses String?
 
   userId String @unique
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)

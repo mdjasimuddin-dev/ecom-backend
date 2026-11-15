@@ -1,14 +1,70 @@
-enum ActiveStatus {
+enum UserStatus {
   ACTIVE
   INACTIVE
-  BLOCKED
+  SUSPENDED
   DELETED
 }
 
 enum UserRole {
+  GUEST
   CUSTOMER
+  STAFF
   ADMIN
   SUPER_ADMIN
-  VENDOR
-  AUTHOR
+}
+
+enum ProductStatus {
+  DRAFT
+  ACTIVE
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  RETURNED
+}
+
+enum PaymentStatus {
+  UNPAID
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+  PARTIALLY_REFUNDED
+}
+
+enum ShipmentStatus {
+  PENDING
+  PICKED_UP
+  IN_TRANSIT
+  OUT_FOR_DELIVERY
+  DELIVERED
+  FAILED
+  RETURNED
+}
+
+enum DiscountType {
+  PERCENTAGE
+  FIXED
+  FREE_SHIPPING
+}
+
+enum ReturnStatus {
+  REQUESTED
+  APPROVED
+  REJECTED
+  RECEIVED
+  REFUNDED
+}
+
+enum StockReason {
+  PURCHASE
+  RESTOCK
+  ADJUSTMENT
+  RETURN
+  CANCEL
 }
