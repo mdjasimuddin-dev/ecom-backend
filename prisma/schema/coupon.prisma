@@ -1,0 +1,19 @@
+model Coupon {
+  id             String       @id @default(uuid())
+  code           String       @unique // যেমন: JASIVO10, EID2026
+  discountType   DiscountType @default(PERCENTAGE)
+  discountValue  Decimal      @db.Decimal(10, 2)
+  minOrderAmount Decimal      @db.Decimal(10, 2)
+  maxDiscount    Decimal?     @db.Decimal(10, 2)
+  status         CouponStatus @default(ACTIVE)
+  usageLimit     Int?
+  usedCount      Int          @default(0)
+  expiresAt      DateTime
+  isActive       Boolean      @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([code])
+  @@map("coupons")
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Jasivo Lifestyle!</title>
+  <style>
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
+    body { 
+      margin: 0; 
+      padding: 0; 
+      width: 100% !important; 
+      background-color: #f1eff5; 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    @media screen and (max-width: 600px) {
+      .wrapper-padding { padding: 16px 8px !important; }
+      .email-container { width: 100% !important; border-radius: 16px !important; }
+      .header-padding { padding: 34px 20px 30px 20px !important; }
+      .content-padding { padding: 30px 22px !important; }
+      .btn-shop { width: 100% !important; display: block !important; box-sizing: border-box; text-align: center !important; padding: 16px 20px !important; }
+      .step-col { display: block !important; width: 100% !important; margin-bottom: 12px !important; }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f1eff5;">
+
+  <!-- Preheader Text -->
+  <div style="display: none; max-height: 0px; overflow: hidden; mso-hide: all;">
+    Your email is verified! Welcome to Jasivo Lifestyle — explore exclusive deals and start shopping today.
+  </div>
+
+  <!-- Main Outer Wrapper -->
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="wrapper-padding" style="background-color: #f1eff5; padding: 40px 12px;">
+    <tr>
+      <td align="center">
+
+        <!-- Main Email Card -->
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" class="email-container" style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 22px; overflow: hidden; border: 1px solid #e5e0ee; box-shadow: 0 20px 45px rgba(30, 11, 54, 0.09);">
+          
+          <!-- Top Accent Bar (Lemon Green) -->
+          <tr>
+            <td style="background-color: #A3E635; height: 5px; font-size: 0; line-height: 0;">&nbsp;</td>
+          </tr>
+
+          <!-- CELEBRATORY HERO HEADER (Uses whiteLogoUrl & websiteUrl) -->
+          <tr>
+            <td align="center" class="header-padding" style="background-color: #1E0B36; background-image: linear-gradient(135deg, #1E0B36 0%, #381366 65%, #1E0B36 100%); padding: 44px 32px 38px 32px; text-align: center;">
+              
+              <% if (typeof whiteLogoUrl !== 'undefined' && whiteLogoUrl) { %>
+              <a href="<%= websiteUrl || 'https://jasivolifestyle.com' %>" target="_blank" style="text-decoration: none; display: inline-block; margin-bottom: 24px;">
+                <img 
+                  src="<%= whiteLogoUrl %>" 
+                  alt="Jasivo Lifestyle" 
+                  width="195" 
+                  style="display: block; max-width: 195px; height: auto; margin: 0 auto;"
+                />
+              </a>
+              <% } %>
+
+              <!-- Verified Success Pill Badge -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto 14px auto;">
+                <tr>
+                  <td style="background-color: rgba(163, 230, 53, 0.16); border: 1px solid #A3E635; color: #A3E635; font-size: 11px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px;">
+                    &#10004; Email Verified &bull; Account Active
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Hero Title (Uses userName) -->
+              <h1 style="margin: 0 0 10px 0; font-size: 28px; font-weight: 800; color: #ffffff; letter-spacing: -0.3px; line-height: 1.25;">
+                You're Officially In, <%= userName %>!
+              </h1>
+              <p style="margin: 0; font-size: 14px; color: #d6c8e8; line-height: 1.5;">
+                Welcome to the Jasivo Lifestyle shopping community.
+              </p>
+            </td>
+          </tr>
+
+          <!-- BODY CONTENT -->
+          <tr>
+            <td class="content-padding" style="padding: 40px 44px 36px 44px; color: #2a2235;">
+              
+              <p style="margin: 0 0 18px 0; font-size: 15.5px; line-height: 1.7; color: #4a4254;">
+                Hi <strong><%= userName %></strong>,
+              </p>
+              <p style="margin: 0 0 24px 0; font-size: 15px; line-height: 1.7; color: #4a4254;">
+                Thank you for verifying your email address! Your <strong>Jasivo Lifestyle</strong> account is now fully activated and ready to go. Discover curated fashion, smart lifestyle gadgets, and everyday essentials delivered straight to your doorstep.
+              </p>
+
+              <!-- PRIMARY CTA BUTTON (Uses websiteUrl) -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0;">
+                <tr>
+                  <td align="center">
+                    <a 
+                      href="<%= websiteUrl || 'https://jasivolifestyle.com' %>" 
+                      target="_blank" 
+                      class="btn-shop"
+                      style="display: inline-block; background-color: #A3E635; background-image: linear-gradient(180deg, #bef264 0%, #99e028 100%); color: #1E0B36; font-size: 16px; font-weight: 800; text-decoration: none; padding: 16px 44px; border-radius: 12px; border: 1px solid #84cc16; box-shadow: 0 8px 20px rgba(132, 204, 22, 0.35); letter-spacing: 0.2px;"
+                    >
+                      Start Shopping Now &nbsp;&rarr;
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- WHAT YOU CAN DO NEXT (3-Column Highlights) -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 28px 0 24px 0; background-color: #faf9fc; border: 1px solid #ede8f5; border-radius: 14px; padding: 16px;">
+                <tr>
+                  <td colspan="3" style="padding-bottom: 12px; text-align: center;">
+                    <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #6b5b7b;">
+                      Why Shop With Jasivo Lifestyle
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="step-col" width="33.33%" align="center" style="padding: 6px; vertical-align: top;">
+                    <div style="background-color: #ffffff; border: 1px solid #ece6f5; border-radius: 10px; padding: 12px 8px;">
+                      <div style="font-size: 18px; margin-bottom: 4px;">&#128666;</div>
+                      <div style="font-size: 12px; font-weight: 700; color: #1E0B36;">Fast Delivery</div>
+                      <div style="font-size: 11px; color: #7a6d8a; margin-top: 2px;">Across Bangladesh</div>
+                    </div>
+                  </td>
+                  <td class="step-col" width="33.33%" align="center" style="padding: 6px; vertical-align: top;">
+                    <div style="background-color: #ffffff; border: 1px solid #ece6f5; border-radius: 10px; padding: 12px 8px;">
+                      <div style="font-size: 18px; margin-bottom: 4px;">&#128274;</div>
+                      <div style="font-size: 12px; font-weight: 700; color: #1E0B36;">Secure Payment</div>
+                      <div style="font-size: 11px; color: #7a6d8a; margin-top: 2px;">COD & Online Pay</div>
+                    </div>
+                  </td>
+                  <td class="step-col" width="33.33%" align="center" style="padding: 6px; vertical-align: top;">
+                    <div style="background-color: #ffffff; border: 1px solid #ece6f5; border-radius: 10px; padding: 12px 8px;">
+                      <div style="font-size: 18px; margin-bottom: 4px;">&#11088;</div>
+                      <div style="font-size: 12px; font-weight: 700; color: #1E0B36;">Top Quality</div>
+                      <div style="font-size: 11px; color: #7a6d8a; margin-top: 2px;">100% Authentic</div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Help / Support Note (Uses supportEmail) -->
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #6e5f80; text-align: center;">
+                Need help with your first order? Reply to this email or contact our support team anytime at 
+                <a href="mailto:<%= supportEmail || 'support@jasivolifestyle.com' %>" style="color: #4c1d95; font-weight: 600; text-decoration: underline;">
+                  <%= supportEmail || 'support@jasivolifestyle.com' %>
+                </a>.
+              </p>
+
+            </td>
+          </tr>
+
+          <!-- LIGHT PREMIUM FOOTER (Uses darkLogoUrl, websiteUrl, supportEmail, privacyUrl) -->
+          <tr>
+            <td style="background-color: #faf9fc; padding: 30px 36px; border-top: 1px solid #ece8f2; text-align: center;">
+              
+              <% if (typeof darkLogoUrl !== 'undefined' && darkLogoUrl) { %>
+              <a href="<%= websiteUrl || '#' %>" target="_blank" style="text-decoration: none; display: inline-block;">
+                <img 
+                  src="<%= darkLogoUrl %>" 
+                  alt="Jasivo Lifestyle" 
+                  width="135" 
+                  style="display: block; max-width: 135px; height: auto; margin: 0 auto 14px auto;"
+                />
+              </a>
+              <% } %>
+
+              <p style="margin: 0 0 6px 0; font-size: 13px; font-weight: 700; color: #1E0B36; letter-spacing: 0.3px;">
+                Jasivo Lifestyle Bangladesh
+              </p>
+              <p style="margin: 0 0 16px 0; font-size: 12px; color: #7e738c;">
+                Elevating your everyday shopping experience.
+              </p>
+
+              <p style="margin: 0 0 16px 0; font-size: 12px;">
+                <a href="<%= websiteUrl || '#' %>" style="color: #581c87; text-decoration: none; font-weight: 600;">Shop Now</a>
+                <span style="color: #cbd5e1; margin: 0 8px;">|</span>
+                <a href="mailto:<%= supportEmail || 'support@jasivolifestyle.com' %>" style="color: #581c87; text-decoration: none; font-weight: 600;">Help Center</a>
+                <span style="color: #cbd5e1; margin: 0 8px;">|</span>
+                <a href="<%= privacyUrl || '#' %>" style="color: #581c87; text-decoration: none; font-weight: 600;">Privacy Policy</a>
+              </p>
+
+              <p style="margin: 0; font-size: 11px; color: #9c92a8; border-top: 1px solid #ece8f2; padding-top: 14px;">
+                &copy; <%= new Date().getFullYear() %> Jasivo Lifestyle. All rights reserved.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

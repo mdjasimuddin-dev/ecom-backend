@@ -1,23 +1,21 @@
-// model Category {
-//   id          String  @id @default(uuid())
-//   name        String
-//   slug        String  @unique
-//   description String?
-//   image       String?
-//   isActive    Boolean @default(true)
+model Category {
+  id          String  @id @default(uuid())
+  name        String
+  slug        String  @unique
+  description String?
+  image       String?
+  isActive    Boolean @default(true)
 
-//   // parentId String?
-//   // parent   Category?  @relation(
-//   //   "CategoryHierarchy",
-//   //   fields: [parentId],
-//   //   references: [id]
-//   // )
-//   // children Category[] @relation("CategoryHierarchy")
+  parentId String?
+  parent   Category?  @relation("CategoryHierarchy", fields: [parentId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  children Category[] @relation("CategoryHierarchy")
 
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime @updatedAt
+  products Product[]
 
-//   // @@index([parentId])
-//   @@index([isActive])
-//   @@map("categories")
-// }
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([parentId])
+  @@index([isActive])
+  @@map("categories")
+}

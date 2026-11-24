@@ -19,7 +19,7 @@ export const UserStatus = {
 export type UserStatus = (typeof UserStatus)[keyof typeof UserStatus]
 
 
-export const UserRole = {
+export const Role = {
   GUEST: 'GUEST',
   CUSTOMER: 'CUSTOMER',
   STAFF: 'STAFF',
@@ -27,7 +27,16 @@ export const UserRole = {
   SUPER_ADMIN: 'SUPER_ADMIN'
 } as const
 
-export type UserRole = (typeof UserRole)[keyof typeof UserRole]
+export type Role = (typeof Role)[keyof typeof Role]
+
+
+export const Gender = {
+  MALE: 'MALE',
+  FEMALE: 'FEMALE',
+  OTHER: 'OTHER'
+} as const
+
+export type Gender = (typeof Gender)[keyof typeof Gender]
 
 
 export const ProductStatus = {
@@ -49,6 +58,14 @@ export const OrderStatus = {
 } as const
 
 export type OrderStatus = (typeof OrderStatus)[keyof typeof OrderStatus]
+
+
+export const PaymentMethod = {
+  COD: 'COD',
+  ONLINE: 'ONLINE'
+} as const
+
+export type PaymentMethod = (typeof PaymentMethod)[keyof typeof PaymentMethod]
 
 
 export const PaymentStatus = {
@@ -105,3 +122,13 @@ export const StockReason = {
 } as const
 
 export type StockReason = (typeof StockReason)[keyof typeof StockReason]
+
+
+export const CouponStatus = {
+  ACTIVE: 'ACTIVE',
+  INACTIVE: 'INACTIVE',
+  EXPIRED: 'EXPIRED',
+  REDEEMED: 'REDEEMED'
+} as const
+
+export type CouponStatus = (typeof CouponStatus)[keyof typeof CouponStatus]

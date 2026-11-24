@@ -1,0 +1,20 @@
+model Address {
+  id            String  @id @default(uuid())
+  label         String  @default("Home") // যেমন: Home, Office
+  recipientName String
+  phone         String
+  district      String // যেমন: Dhaka, Chattogram (ডেলিভারি চার্জ হিসাব করতে কাজে লাগবে)
+  thana         String // যেমন: Dhanmondi, Uttara
+  address       String // বিস্তারিত ঠিকানা
+  postalCode    String?
+  isDefault     Boolean @default(false)
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@map("addresses")
+}

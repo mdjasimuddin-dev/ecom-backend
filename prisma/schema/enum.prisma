@@ -5,12 +5,18 @@ enum UserStatus {
   DELETED
 }
 
-enum UserRole {
+enum Role {
   GUEST
   CUSTOMER
   STAFF
   ADMIN
   SUPER_ADMIN
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
 }
 
 enum ProductStatus {
@@ -26,6 +32,11 @@ enum OrderStatus {
   DELIVERED
   CANCELLED
   RETURNED
+}
+
+enum PaymentMethod {
+  COD
+  ONLINE
 }
 
 enum PaymentStatus {
@@ -67,4 +78,11 @@ enum StockReason {
   ADJUSTMENT
   RETURN
   CANCEL
+}
+
+enum CouponStatus {
+  ACTIVE
+  INACTIVE
+  EXPIRED
+  REDEEMED
 }

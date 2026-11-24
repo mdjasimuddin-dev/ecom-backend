@@ -1,0 +1,31 @@
+model Order {
+  id          String @id @default(uuid())
+  orderNumber String @unique // যেমন: JSV-20261123-8492
+  userId      String
+  user        User   @relation(fields: [userId], references: [id])
+
+  // অর্ডারের সময় ঠিকানার স্ন্যাপশট সেভ রাখা (যাতে ইউজার পরে ঠিকানা বদলালেও পুরনো অর্ডারের তথ্য না বদলায়)
+  shippingAddress Json
+
+  subtotal       Float
+  deliveryCharge Float @default(0)
+  discountAmount Float @default(0)
+  totalAmount    Float
+
+  couponCode    String?
+  paymentMethod PaymentMethod @default(COD)
+  paymentStatus PaymentStatus @default(UNPAID)
+  orderStatus   OrderStatus   @default(PENDING)
+  transactionId String?
+  orderNote     String?
+
+  items OrderItem[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([orderNumber])
+  @@index([orderStatus])
+  @@map("orders")
+}

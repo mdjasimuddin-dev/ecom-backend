@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmed - Jasivo Lifestyle</title>
+  <style>
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
+    body { 
+      margin: 0; 
+      padding: 0; 
+      width: 100% !important; 
+      background-color: #f1eff5; 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    @media screen and (max-width: 600px) {
+      .wrapper-padding { padding: 16px 8px !important; }
+      .email-container { width: 100% !important; border-radius: 16px !important; }
+      .header-padding { padding: 34px 20px 30px 20px !important; }
+      .content-padding { padding: 28px 20px !important; }
+      .btn-track { width: 100% !important; display: block !important; box-sizing: border-box; text-align: center !important; padding: 16px 20px !important; }
+      .meta-col { display: block !important; width: 100% !important; margin-bottom: 10px !important; }
+      .summary-spacer { display: none !important; width: 0 !important; }
+      .summary-box { width: 100% !important; }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f1eff5;">
+
+  <!-- Preheader Text -->
+  <div style="display: none; max-height: 0px; overflow: hidden; mso-hide: all;">
+    Order #<%= order.orderNumber %> confirmed! Thank you for shopping with Jasivo Lifestyle. Your PDF invoice is attached.
+  </div>
+
+  <!-- Main Outer Wrapper -->
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="wrapper-padding" style="background-color: #f1eff5; padding: 40px 12px;">
+    <tr>
+      <td align="center">
+
+        <!-- Main Email Card -->
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" class="email-container" style="max-width: 850px; width: 100%; background-color: #ffffff; border-radius: 22px; overflow: hidden; border: 1px solid #e5e0ee; box-shadow: 0 20px 45px rgba(30, 11, 54, 0.09);">
+          
+          <!-- Top Accent Bar (Lemon Green) -->
+          <tr>
+            <td style="background-color: #A3E635; height: 5px; font-size: 0; line-height: 0;">&nbsp;</td>
+          </tr>
+
+          <!-- HERO HEADER -->
+          <tr>
+            <td align="center" class="header-padding" style="background-color: #1E0B36; background-image: linear-gradient(135deg, #1E0B36 0%, #381366 65%, #1E0B36 100%); padding: 42px 32px 36px 32px; text-align: center;">
+              
+              <% if (typeof whiteLogoUrl !== 'undefined' && whiteLogoUrl) { %>
+              <a href="<%= websiteUrl || 'https://jasivolifestyle.com' %>" target="_blank" style="text-decoration: none; display: inline-block; margin-bottom: 22px;">
+                <img 
+                  src="<%= whiteLogoUrl %>" 
+                  alt="Jasivo Lifestyle" 
+                  width="190" 
+                  style="display: block; max-width: 190px; height: auto; margin: 0 auto;"
+                />
+              </a>
+              <% } %>
+
+              <!-- Order Confirmed Pill Badge -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto 14px auto;">
+                <tr>
+                  <td style="background-color: rgba(163, 230, 53, 0.16); border: 1px solid #A3E635; color: #A3E635; font-size: 11px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px;">
+                    &#10004; Order Confirmed &bull; #<%= order.orderNumber %>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Hero Title -->
+              <h1 style="margin: 0 0 10px 0; font-size: 27px; font-weight: 800; color: #ffffff; letter-spacing: -0.3px; line-height: 1.25;">
+                Thank You For Your Order!
+              </h1>
+              <p style="margin: 0; font-size: 14px; color: #d6c8e8; line-height: 1.5;">
+                We’ve received your order and are preparing it for dispatch.
+              </p>
+            </td>
+          </tr>
+
+          <!-- BODY CONTENT -->
+          <tr>
+            <td class="content-padding" style="padding: 36px 40px 34px 40px; color: #2a2235;">
+              
+              <p style="margin: 0 0 14px 0; font-size: 15.5px; line-height: 1.6; color: #4a4254;">
+                Hi <strong><%= order.user?.name || order.shippingAddress?.recipientName || 'Valued Customer' %></strong>,
+              </p>
+              <p style="margin: 0 0 24px 0; font-size: 14.5px; line-height: 1.7; color: #4a4254;">
+                Great news! Your order <strong>#<%= order.orderNumber %></strong> has been successfully placed. We have also attached your official <strong>PDF Invoice</strong> with this email for your records.
+              </p>
+
+              <!-- ORDER METADATA GRID (2x2 Highlight Cards) -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 0 0 26px 0; background-color: #faf9fc; border: 1px solid #ede8f5; border-radius: 14px; padding: 14px;">
+                <tr>
+                  <td class="meta-col" width="50%" style="padding: 6px; vertical-align: top;">
+                    <div style="background-color: #ffffff; border: 1px solid #ece6f5; border-radius: 10px; padding: 12px 14px;">
+                      <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #7a6d8a;">Order Number</div>
+                      <div style="font-size: 14px; font-weight: 800; color: #1E0B36; margin-top: 3px;">#<%= order.orderNumber %></div>
+                    </div>
+                  </td>
+                  <td class="meta-col" width="50%" style="padding: 6px; vertical-align: top;">
+                    <div style="background-color: #ffffff; border: 1px solid #ece6f5; border-radius: 10px; padding: 12px 14px;">
+                      <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #7a6d8a;">Order Date</div>
+                      <div style="font-size: 14px; font-weight: 700; color: #1E0B36; margin-top: 3px;">
+                        <%= new Date(order.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="meta-col" width="50%" style="padding: 6px; vertical-align: top;">
+                    <div style="background-color: #ffffff; border: 1px solid #ece6f5; border-radius: 10px; padding: 12px 14px;">
+                      <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #7a6d8a;">Payment Method</div>
+                      <div style="font-size: 14px; font-weight: 700; color: #1E0B36; margin-top: 3px;">
+                        <%= order.paymentMethod %> <span style="font-size: 11px; font-weight: 600; color: #6b5b7b;">(<%= order.paymentStatus %>)</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="meta-col" width="50%" style="padding: 6px; vertical-align: top;">
+                    <div style="background-color: #ffffff; border: 1px solid #ece6f5; border-radius: 10px; padding: 12px 14px;">
+                      <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #7a6d8a;">Order Status</div>
+                      <div style="font-size: 14px; font-weight: 800; color: #4d7c0f; margin-top: 3px;">&#9679; <%= order.orderStatus %></div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- ORDERED ITEMS TABLE -->
+              <div style="font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #1E0B36; margin-bottom: 10px;">
+                Items Ordered
+              </div>
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border: 1px solid #ece6f5; border-radius: 12px; overflow: hidden; border-collapse: separate; margin-bottom: 22px;">
+                <thead>
+                  <tr style="background-color: #1E0B36;">
+                    <th style="padding: 12px 14px; text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #ffffff;">Product</th>
+                    <th style="padding: 12px 10px; text-align: center; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #ffffff;">Qty</th>
+                    <th style="padding: 12px 14px; text-align: right; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #A3E635;">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% order.items.forEach(function(item, idx) { %>
+                  <tr style="background-color: <%= idx % 2 === 1 ? '#faf9fc' : '#ffffff' %>;">
+                    <td style="padding: 13px 14px; border-bottom: 1px solid #f0ecf7; font-size: 13.5px; color: #1E0B36;">
+                      <strong style="display: block; margin-bottom: 3px;"><%= item.productName %></strong>
+                      <span style="display: inline-block; background-color: #f3effa; color: #581c87; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px;">
+                        Size: <%= item.size %> &bull; Color: <%= item.color %>
+                      </span>
+                    </td>
+                    <td style="padding: 13px 10px; border-bottom: 1px solid #f0ecf7; text-align: center; font-size: 13.5px; font-weight: 700; color: #4a4254;">
+                      &times;<%= item.quantity %>
+                    </td>
+                    <td style="padding: 13px 14px; border-bottom: 1px solid #f0ecf7; text-align: right; font-size: 13.5px; font-weight: 700; color: #1E0B36;">
+                      BDT <%= Number(item.totalPrice).toFixed(2) %>
+                    </td>
+                  </tr>
+                  <% }); %>
+                </tbody>
+              </table>
+
+              <!-- PRICE BREAKDOWN -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 26px;">
+                <tr>
+                  <td class="summary-spacer" width="42%"></td>
+                  <td class="summary-box" width="58%">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #faf9fc; border: 1px solid #ede8f5; border-radius: 12px; padding: 14px 16px;">
+                      <tr>
+                        <td style="padding: 5px 0; font-size: 13.5px; color: #6b5b7b;">Subtotal</td>
+                        <td style="padding: 5px 0; font-size: 13.5px; font-weight: 600; color: #1E0B36; text-align: right;">BDT <%= Number(order.subtotal).toFixed(2) %></td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 5px 0; font-size: 13.5px; color: #6b5b7b;">Delivery Charge</td>
+                        <td style="padding: 5px 0; font-size: 13.5px; font-weight: 600; color: #1E0B36; text-align: right;">BDT <%= Number(order.deliveryCharge).toFixed(2) %></td>
+                      </tr>
+                      <% if (Number(order.discountAmount) > 0) { %>
+                      <tr>
+                        <td style="padding: 5px 0; font-size: 13.5px; color: #4d7c0f; font-weight: 600;">
+                          Discount (<%= order.couponCode || 'Promo' %>)
+                        </td>
+                        <td style="padding: 5px 0; font-size: 13.5px; color: #4d7c0f; font-weight: 700; text-align: right;">
+                          - BDT <%= Number(order.discountAmount).toFixed(2) %>
+                        </td>
+                      </tr>
+                      <% } %>
+                      <tr>
+                        <td colspan="2" style="padding-top: 10px;">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #1E0B36; border-radius: 8px; padding: 10px 12px;">
+                            <tr>
+                              <td style="font-size: 14px; font-weight: 700; color: #ffffff;">Total Payable</td>
+                              <td style="font-size: 15px; font-weight: 800; color: #A3E635; text-align: right;">BDT <%= Number(order.totalAmount).toFixed(2) %></td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- DELIVERY ADDRESS CARD -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 28px; background-color: #faf9fc; border: 1px solid #ede8f5; border-left: 4px solid #A3E635; border-radius: 12px; padding: 16px 18px;">
+                <tr>
+                  <td>
+                    <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.9px; color: #6b5b7b; margin-bottom: 6px;">
+                      &#128205; Delivery Destination (<%= order.shippingAddress?.label || 'Address' %>)
+                    </div>
+                    <div style="font-size: 14px; font-weight: 700; color: #1E0B36; margin-bottom: 3px;">
+                      <%= order.shippingAddress?.recipientName || '' %>
+                    </div>
+                    <div style="font-size: 13px; line-height: 1.55; color: #4a4254;">
+                      <%= order.shippingAddress?.streetAddress || order.shippingAddress?.address || '' %>, <%= order.shippingAddress?.thana || '' %>, <%= order.shippingAddress?.district || '' %> <%= order.shippingAddress?.postalCode || '' %><br />
+                      <strong>Phone:</strong> <%= order.shippingAddress?.phone || 'N/A' %>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- PRIMARY CTA BUTTON -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 26px 0 24px 0;">
+                <tr>
+                  <td align="center">
+                    <a 
+                      href="<%= (websiteUrl || 'https://jasivolifestyle.com') + '/orders/' + order.id %>" 
+                      target="_blank" 
+                      class="btn-track"
+                      style="display: inline-block; background-color: #A3E635; background-image: linear-gradient(180deg, #bef264 0%, #99e028 100%); color: #1E0B36; font-size: 15.5px; font-weight: 800; text-decoration: none; padding: 15px 40px; border-radius: 12px; border: 1px solid #84cc16; box-shadow: 0 8px 20px rgba(132, 204, 22, 0.35); letter-spacing: 0.2px;"
+                    >
+                      Track Your Order &nbsp;&rarr;
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Help / Support Note -->
+              <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6e5f80; text-align: center;">
+                Have questions about your order? Reply to this email or reach us anytime at 
+                <a href="mailto:<%= supportEmail || 'support@jasivolifestyle.com' %>" style="color: #4c1d95; font-weight: 600; text-decoration: underline;">
+                  <%= supportEmail || 'support@jasivolifestyle.com' %>
+                </a>.
+              </p>
+
+            </td>
+          </tr>
+
+          <!-- LIGHT PREMIUM FOOTER -->
+          <tr>
+            <td style="background-color: #faf9fc; padding: 30px 36px; border-top: 1px solid #ece8f2; text-align: center;">
+              
+              <% if (typeof darkLogoUrl !== 'undefined' && darkLogoUrl) { %>
+              <a href="<%= websiteUrl || 'https://jasivolifestyle.com' %>" target="_blank" style="text-decoration: none; display: inline-block;">
+                <img 
+                  src="<%= darkLogoUrl %>" 
+                  alt="Jasivo Lifestyle" 
+                  width="135" 
+                  style="display: block; max-width: 135px; height: auto; margin: 0 auto 14px auto;"
+                />
+              </a>
+              <% } %>
+
+              <p style="margin: 0 0 6px 0; font-size: 13px; font-weight: 700; color: #1E0B36; letter-spacing: 0.3px;">
+                Jasivo Lifestyle Bangladesh
+              </p>
+              <p style="margin: 0 0 16px 0; font-size: 12px; color: #7e738c;">
+                Elevating your everyday shopping experience.
+              </p>
+
+              <p style="margin: 0 0 16px 0; font-size: 12px;">
+                <a href="<%= websiteUrl || 'https://jasivolifestyle.com' %>" style="color: #581c87; text-decoration: none; font-weight: 600;">Shop Now</a>
+                <span style="color: #cbd5e1; margin: 0 8px;">|</span>
+                <a href="mailto:<%= supportEmail || 'support@jasivolifestyle.com' %>" style="color: #581c87; text-decoration: none; font-weight: 600;">Help Center</a>
+                <span style="color: #cbd5e1; margin: 0 8px;">|</span>
+                <a href="<%= privacyUrl || 'https://jasivolifestyle.com/privacy-policy' %>" style="color: #581c87; text-decoration: none; font-weight: 600;">Privacy Policy</a>
+              </p>
+
+              <p style="margin: 0; font-size: 11px; color: #9c92a8; border-top: 1px solid #ece8f2; padding-top: 14px;">
+                &copy; <%= new Date().getFullYear() %> Jasivo Lifestyle. All rights reserved.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

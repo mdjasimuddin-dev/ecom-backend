@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verify Your Email - Jasivo Lifestyle</title>
+  <style>
+    /* Client-specific resets */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
+    body { 
+      margin: 0; 
+      padding: 0; 
+      width: 100% !important; 
+      background-color: #f1eff5; 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    @media screen and (max-width: 600px) {
+      .wrapper-padding { padding: 16px 8px !important; }
+      .email-container { width: 100% !important; border-radius: 16px !important; }
+      .header-padding { padding: 32px 20px 28px 20px !important; }
+      .content-padding { padding: 30px 22px !important; }
+      .btn-verify { width: 100% !important; display: block !important; box-sizing: border-box; text-align: center !important; padding: 16px 20px !important; }
+      .perk-col { display: block !important; width: 100% !important; margin-bottom: 10px !important; }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f1eff5;">
+
+  <!-- Preheader Text -->
+  <div style="display: none; max-height: 0px; overflow: hidden; mso-hide: all;">
+    Welcome to Jasivo Lifestyle! Confirm your email to unlock exclusive member deals and start shopping.
+  </div>
+
+  <!-- Main Outer Wrapper -->
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="wrapper-padding" style="background-color: #f1eff5; padding: 40px 12px;">
+    <tr>
+      <td align="center">
+
+        <!-- Main Email Card -->
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" class="email-container" style="max-width: 850px; width: 100%; background-color: #ffffff; border-radius: 22px; overflow: hidden; border: 1px solid #e5e0ee; box-shadow: 0 20px 45px rgba(30, 11, 54, 0.09);">
+          
+          <!-- Top Accent Bar (Lemon Green) -->
+          <tr>
+            <td style="background-color: #A3E635; height: 5px; font-size: 0; line-height: 0;">&nbsp;</td>
+          </tr>
+
+          <!-- PREMIUM HERO HEADER -->
+          <tr>
+            <td align="center" class="header-padding" style="background-color: #1E0B36; background-image: linear-gradient(135deg, #1E0B36 0%, #34125E 65%, #1E0B36 100%); padding: 42px 32px 36px 32px; text-align: center;">
+              
+              <!-- Brand Logo (White Transparent PNG) -->
+              <a href="<%= websiteUrl || 'https://jasivolifestyle.com' %>" target="_blank" style="text-decoration: none; display: inline-block; margin-bottom: 24px;">
+                <img 
+                  src="<%= whiteLogoUrl %>" 
+                  alt="Jasivo Lifestyle" 
+                  width="195" 
+                  style="display: block; max-width: 195px; height: auto; margin: 0 auto;"
+                />
+              </a>
+
+              <!-- Status Pill Badge -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto 14px auto;">
+                <tr>
+                  <td style="background-color: rgba(163, 230, 53, 0.14); border: 1px solid rgba(163, 230, 53, 0.45); color: #A3E635; font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px;">
+                    &#10024; Member Account Activation
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Hero Title -->
+              <h1 style="margin: 0; font-size: 26px; font-weight: 800; color: #ffffff; letter-spacing: -0.3px; line-height: 1.3;">
+                One Step Away from Exclusive Style
+              </h1>
+            </td>
+          </tr>
+
+          <!-- BODY SECTION -->
+          <tr>
+            <td class="content-padding" style="padding: 40px 44px 36px 44px; color: #2a2235;">
+              
+              <!-- Personalized Greeting -->
+              <p style="margin: 0 0 14px 0; font-size: 18px; font-weight: 700; color: #1E0B36;">
+                Hi <%= userName %>,
+              </p>
+
+              <!-- Welcome Copy -->
+              <p style="margin: 0 0 24px 0; font-size: 15px; line-height: 1.7; color: #4e4659;">
+                Welcome to the <strong>Jasivo Lifestyle</strong> family! We’re excited to have you on board. To protect your account and unlock full access to our curated collections, please verify your email address below.
+              </p>
+
+              <!-- PRIMARY CTA BUTTON -->
+              <!-- <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0;">
+                <tr>
+                  <td align="center">
+                    <a 
+                      href="<%= verificationUrl %>" 
+                      target="_blank" 
+                      class="btn-verify"
+                      style="display: inline-block; background-color: #A3E635; background-image: linear-gradient(180deg, #bef264 0%, #99e028 100%); color: #1E0B36; font-size: 16px; font-weight: 800; text-decoration: none; padding: 16px 42px; border-radius: 12px; border: 1px solid #84cc16; box-shadow: 0 8px 20px rgba(132, 204, 22, 0.35); letter-spacing: 0.2px;"
+                    >
+                      Verify My Email Address &nbsp;&rarr;
+                    </a>
+                  </td>
+                </tr>
+              </table> -->
+
+              <!-- OPTIONAL OTP BOX (Automatically renders if otpCode is passed) -->
+              <% if (typeof otpCode !== 'undefined' && otpCode) { %>
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 26px 0; background-color: #faf8fd; border: 1.5px dashed #b985f4; border-radius: 14px;">
+                <tr>
+                  <td align="center" style="padding: 20px;">
+                    <p style="margin: 0 0 6px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; color: #6e5f80; font-weight: 700;">
+                      Or enter your 6-digit verification code
+                    </p>
+                    <p style="margin: 0; font-size: 30px; font-weight: 800; letter-spacing: 8px; color: #1E0B36; font-family: 'Courier New', Courier, monospace;">
+                      <%= otpCode %>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              <% } %>
+
+              <!-- E-COMMERCE VALUE PROPS (3 Mini Feature Cards) -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0 26px 0; background-color: #faf9fc; border: 1px solid #ede8f5; border-radius: 14px; padding: 16px;">
+                <tr>
+                  <td colspan="3" style="padding-bottom: 12px; text-align: center;">
+                    <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #6b5b7b;">
+                      What Awaits You Inside
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <!-- Perk 1 -->
+                  <td class="perk-col" width="33.33%" align="center" style="padding: 6px; vertical-align: top;">
+                    <div style="background-color: #ffffff; border: 1px solid #ece6f5; border-radius: 10px; padding: 12px 8px;">
+                      <div style="font-size: 18px; margin-bottom: 4px;">&#127873;</div>
+                      <div style="font-size: 12px; font-weight: 700; color: #1E0B36;">Member Deals</div>
+                      <div style="font-size: 11px; color: #7a6d8a; margin-top: 2px;">Exclusive offers</div>
+                    </div>
+                  </td>
+                  <!-- Perk 2 -->
+                  <td class="perk-col" width="33.33%" align="center" style="padding: 6px; vertical-align: top;">
+                    <div style="background-color: #ffffff; border: 1px solid #ece6f5; border-radius: 10px; padding: 12px 8px;">
+                      <div style="font-size: 18px; margin-bottom: 4px;">&#9889;</div>
+                      <div style="font-size: 12px; font-weight: 700; color: #1E0B36;">Fast Checkout</div>
+                      <div style="font-size: 11px; color: #7a6d8a; margin-top: 2px;">Easy order tracking</div>
+                    </div>
+                  </td>
+                  <!-- Perk 3 -->
+                  <td class="perk-col" width="33.33%" align="center" style="padding: 6px; vertical-align: top;">
+                    <div style="background-color: #ffffff; border: 1px solid #ece6f5; border-radius: 10px; padding: 12px 8px;">
+                      <div style="font-size: 18px; margin-bottom: 4px;">&#128737;&#65039;</div>
+                      <div style="font-size: 12px; font-weight: 700; color: #1E0B36;">100% Authentic</div>
+                      <div style="font-size: 11px; color: #7a6d8a; margin-top: 2px;">Verified quality</div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Expiry & Security Notice -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f7fce9; border-left: 3.5px solid #84cc16; border-radius: 6px; margin-bottom: 24px;">
+                <tr>
+                  <td style="padding: 12px 16px; font-size: 13px; line-height: 1.5; color: #365314;">
+                    <strong>Security Note:</strong> This verification link expires in <strong><%= expiryTime || '24 hours' %></strong>. Didn’t sign up for Jasivo Lifestyle? Simply ignore this email.
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Divider -->
+              <hr style="border: 0; border-top: 1px solid #ede9f4; margin: 24px 0 18px 0;" />
+
+              <!-- Fallback Link -->
+              <!-- <p style="margin: 0 0 6px 0; font-size: 12px; color: #7e738c;">
+                Button not working? Copy and paste this link into your browser:
+              </p>
+              <p style="margin: 0; font-size: 11.5px; line-height: 1.5; word-break: break-all;">
+                <a href="<%= verificationUrl %>" target="_blank" style="color: #4c1d95; text-decoration: underline;">
+                  <%= verificationUrl %>
+                </a>
+              </p> -->
+
+            </td>
+          </tr>
+
+          <!-- PREMIUM FOOTER -->
+          <tr>
+            <td style="background-color: #18092b; padding: 32px 36px; text-align: center; color: #c4b5d6;">
+              
+              <!-- White Logo in Dark Footer (or Dark Logo if you prefer light footer) -->
+              <% if (typeof whiteLogoUrl !== 'undefined' && whiteLogoUrl) { %>
+              <img 
+                src="<%= whiteLogoUrl %>" 
+                alt="Jasivo Lifestyle" 
+                width="130" 
+                style="display: block; max-width: 130px; height: auto; margin: 0 auto 14px auto; opacity: 0.9;"
+              />
+              <% } %>
+
+              <p style="margin: 0 0 6px 0; font-size: 13px; font-weight: 700; color: #ffffff; letter-spacing: 0.3px;">
+                Jasivo Lifestyle Bangladesh
+              </p>
+              <p style="margin: 0 0 18px 0; font-size: 12px; color: #a796bd;">
+                Elevating your everyday shopping experience.
+              </p>
+
+              <!-- Navigation Links -->
+              <p style="margin: 0 0 18px 0; font-size: 12px;">
+                <a href="<%= websiteUrl || '#' %>" style="color: #A3E635; text-decoration: none; font-weight: 600;">Visit Store</a>
+                <span style="color: #5b437a; margin: 0 8px;">|</span>
+                <a href="mailto:<%= supportEmail || 'support@jasivolifestyle.com' %>" style="color: #A3E635; text-decoration: none; font-weight: 600;">Customer Support</a>
+                <span style="color: #5b437a; margin: 0 8px;">|</span>
+                <a href="<%= privacyUrl || '#' %>" style="color: #A3E635; text-decoration: none; font-weight: 600;">Privacy Policy</a>
+              </p>
+
+              <!-- Copyright -->
+              <p style="margin: 0; font-size: 11px; color: #7c6994; border-top: 1px solid #2b1447; padding-top: 16px;">
+                &copy; <%= new Date().getFullYear() %> Jasivo Lifestyle. All rights reserved.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+        <!-- End Main Email Card -->
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

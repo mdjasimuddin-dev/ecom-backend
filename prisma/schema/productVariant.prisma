@@ -1,0 +1,20 @@
+model ProductVariant {
+  id    String   @id @default(uuid())
+  sku   String   @unique
+  size  String // যেমন: S, M, L, XL, 32, 34
+  color String // যেমন: Black, White, Navy Blue
+  stock Int      @default(0)
+  price Decimal? @db.Decimal(10, 2)
+
+  productId  String
+  product    Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
+  cartItems  CartItem[]
+  orderItems OrderItem[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([productId])
+  @@index([size, color])
+  @@map("product_variants")
+}
